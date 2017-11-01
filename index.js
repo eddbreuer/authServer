@@ -5,10 +5,10 @@ const morgan = require('morgan');
 const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
-const config = require('./config')
+
 
 //DB Setup
-mongoose.connect(config.mongoURI);
+mongoose.connect(process.env.mongoURI);
 
 //App Setup
 app.use(morgan('combined'));
